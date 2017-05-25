@@ -1,6 +1,7 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'sonar-runner'
 group='BankApp'
 version ='1.0'
 
@@ -16,4 +17,11 @@ dependencies {
 
     testCompile 'junit:junit:4.12'
     compile 'org.mockito:mockito-all:1.10.19'
+}
+
+sonarRunner{
+	sonarProperties {
+		property "sonar.projectName", "Bank APP"
+		property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+	}
 }
